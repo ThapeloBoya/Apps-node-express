@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anymine | A World Unfolds</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="container">
+    <nav>
+        <div class="menu">
+            <ul>
+                <li> <img src="images/logo.png" alt="" class="logo" /></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="heading">
+        <h1>Register</h1>
+    </header>
+
+    <form action="/register" method="POST">
+        <label>Username:</label>
+        <input type="text" id='username' name="username" minlength="8" required>
+        <br><br>
+
+        <label>Email ID:</label>
+        <input type="email" id='email' name="email" required>
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+        <input type="checkbox" onclick="myFunction()">Show
+        <br><br>
+
+        <button type="reset" class="btn">Reset</button>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+    <div class="validation">
+        <h4>Password must contain the following:</h4>
+        <p>Lower case | upper case | A number | Minimum 8 characters</p>
+    </div>
+    <br><br>
+    <div class="login-bottom">
+        <p>Already have an account?  <a id="mylink" href="./login.html">login</a></p>
+    </div>
+    <div class="footer">
+        <p>Anymine @ 2022</p>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
